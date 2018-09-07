@@ -60,7 +60,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "fa4e54c7849d204d7fe9"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "32842ef3ee6bb8291e4b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -47805,11 +47805,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/react.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Header__ = __webpack_require__("./src/components/Header.jsx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__TapList__ = __webpack_require__("./src/components/TapList.jsx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__TapList___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__TapList__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_router_dom__ = __webpack_require__("./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NewTappControl__ = __webpack_require__("./src/components/NewTappControl.jsx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Error404__ = __webpack_require__("./src/components/Error404.jsx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__("./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__NewTapp__ = __webpack_require__("./src/components/NewTapp.jsx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Error404__ = __webpack_require__("./src/components/Error404.jsx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__TapControl__ = __webpack_require__("./src/components/TapControl.jsx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__TapList__ = __webpack_require__("./src/components/TapList.jsx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Tap__ = __webpack_require__("./src/components/Tap.jsx");
+
+
 
 
 
@@ -47823,11 +47826,19 @@ function App() {
     null,
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Header__["a" /* default */], null),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["d" /* Switch */],
+      __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* Switch */],
       null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/#', component: __WEBPACK_IMPORTED_MODULE_2__TapList___default.a }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/newTappControl', component: __WEBPACK_IMPORTED_MODULE_4__NewTappControl__["a" /* default */] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { component: __WEBPACK_IMPORTED_MODULE_5__Error404__["a" /* default */] })
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { exact: true, path: '/#', component: App }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/tapControl', component: __WEBPACK_IMPORTED_MODULE_5__TapControl__["a" /* default */] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/error404', component: __WEBPACK_IMPORTED_MODULE_4__Error404__["a" /* default */] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/tapList', component: __WEBPACK_IMPORTED_MODULE_6__TapList__["a" /* default */] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/newTapp', component: __WEBPACK_IMPORTED_MODULE_3__NewTapp__["a" /* default */] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/tap', component: __WEBPACK_IMPORTED_MODULE_7__Tap__["a" /* default */] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'h1',
+        null,
+        'Hello Welcome to the tap Room'
+      )
     )
   );
 }
@@ -47916,11 +47927,6 @@ function Header() {
     'div',
     null,
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'h1',
-      null,
-      'Header'
-    ),
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
       { to: '/#' },
       'Home'
@@ -47928,8 +47934,14 @@ function Header() {
     ' | ',
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-      { to: '/newTappControl' },
-      'newTappControl'
+      { to: '/tapControl' },
+      'TappControl'
+    ),
+    '|',
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+      { to: '/error404' },
+      'Error404'
     )
   );
 }
@@ -47952,7 +47964,7 @@ var _temp = function () {
 
 /***/ }),
 
-/***/ "./src/components/NewTappControl.jsx":
+/***/ "./src/components/NewTapp.jsx":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47960,29 +47972,71 @@ var _temp = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 
 
-function NewTappControl() {
+function NewTapp() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     'div',
     null,
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'form',
       null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-        type: 'text',
-        id: 'brew',
-        placeholder: 'Brew' }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
-        id: 'issue',
-        placeholder: 'Describe your issue.' }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'li',
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+          type: 'text',
+          id: 'name',
+          placeholder: 'Name' })
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'li',
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+          name: 'text',
+          id: 'brewer',
+          placeholder: 'Brewer' })
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'li',
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+          type: 'text',
+          id: 'description',
+          placeholder: 'Description' })
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'li',
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+          type: 'text',
+          id: 'abv',
+          placeholder: 'Abv' })
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'li',
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+          type: 'text',
+          id: 'price',
+          placeholder: 'Price' })
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'li',
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+          type: 'text',
+          id: 'remaining',
+          placeholder: 'Quantity' })
+      ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'button',
         { type: 'submit' },
-        'Help!'
+        'Submit!'
       )
     )
   );
 }
-var _default = NewTappControl;
+
+var _default = NewTapp;
 /* harmony default export */ __webpack_exports__["a"] = (_default);
 ;
 
@@ -47991,9 +48045,163 @@ var _temp = function () {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(NewTappControl, 'NewTappControl', '/Users/brianpalowski/Desktop/Tap-Room/src/components/NewTappControl.jsx');
+  __REACT_HOT_LOADER__.register(NewTapp, 'NewTapp', '/Users/brianpalowski/Desktop/Tap-Room/src/components/NewTapp.jsx');
 
-  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/brianpalowski/Desktop/Tap-Room/src/components/NewTappControl.jsx');
+  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/brianpalowski/Desktop/Tap-Room/src/components/NewTapp.jsx');
+}();
+
+;
+
+/***/ }),
+
+/***/ "./src/components/Tap.jsx":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/react.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__("./node_modules/prop-types/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
+
+
+
+function Tap(props) {
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    'div',
+    null,
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'h1',
+      null,
+      props.name
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'p',
+      null,
+      props.brewer
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'p',
+      null,
+      props.description
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'p',
+      null,
+      props.abv
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'p',
+      null,
+      '$ ',
+      props.price
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'p',
+      null,
+      props.remaining
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'button',
+      { type: 'submit' },
+      'Delete'
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'button',
+      { type: 'submit' },
+      'Edit'
+    )
+  );
+}
+
+Tap.propTypes = {
+  name: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string.isRequired,
+  brewer: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string.isRequired,
+  description: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.isRequired,
+  abv: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string.isRequired,
+  price: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string.isRequired,
+  remaining: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.isRequired
+};
+
+var _default = Tap;
+/* harmony default export */ __webpack_exports__["a"] = (_default);
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(Tap, 'Tap', '/Users/brianpalowski/Desktop/Tap-Room/src/components/Tap.jsx');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/brianpalowski/Desktop/Tap-Room/src/components/Tap.jsx');
+}();
+
+;
+
+/***/ }),
+
+/***/ "./src/components/TapControl.jsx":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/react.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__("./node_modules/react-router-dom/es/index.js");
+
+
+
+function TapControl() {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    'div',
+    null,
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'h2',
+      null,
+      'Hello tap Info page'
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'h3',
+      null,
+      'Would you like to see our ',
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+        { to: '/tapList' },
+        ' Tap List'
+      ),
+      '?'
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'h4',
+      null,
+      'or'
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'h3',
+      null,
+      'Would you like create a ',
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+        { to: '/newTapp' },
+        'New Tapp'
+      ),
+      ' ?'
+    )
+  );
+}
+
+var _default = TapControl;
+/* harmony default export */ __webpack_exports__["a"] = (_default);
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(TapControl, 'TapControl', '/Users/brianpalowski/Desktop/Tap-Room/src/components/TapControl.jsx');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/brianpalowski/Desktop/Tap-Room/src/components/TapControl.jsx');
 }();
 
 ;
@@ -48001,14 +48209,91 @@ var _temp = function () {
 /***/ }),
 
 /***/ "./src/components/TapList.jsx":
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/react.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Tap__ = __webpack_require__("./src/components/Tap.jsx");
+
+
+
+var state = {
+  masterKegList: [{
+    name: 'Ruby Zozzle',
+    brewer: 'Hi-Wheel',
+    description: 'Sparkling Wine & Grapefruit',
+    abv: '6.8%',
+    price: '7',
+    remaining: '20'
+  }, {
+    name: 'Tart N Juicy',
+    brewer: 'Epic',
+    description: 'Sour IPA',
+    abv: '4.5%',
+    price: '6',
+    remaining: '60'
+  }, {
+    name: 'Hamm\'s',
+    brewer: 'Miller/Coors',
+    description: 'American Lager',
+    abv: '4.7%',
+    price: '3',
+    remaining: '65'
+  }, {
+    name: 'Prismatic',
+    brewer: 'Ninkasi',
+    description: 'Juicy IPA',
+    abv: '5.9%',
+    price: '6',
+    remaining: '75'
+  }, {
+    name: 'Juicy Haze',
+    brewer: 'New Belgium',
+    description: 'India Pale Ale',
+    abv: '7.5%',
+    price: '6',
+    remaining: '18'
+  }, {
+    name: '8 Hop',
+    brewer: 'New Belgium',
+    description: 'Pale Ale',
+    abv: '5.5%',
+    price: '6',
+    remaining: '58'
+  }]
+};
+
+function TapList() {
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    'div',
+    null,
+    state.masterKegList.map(function (tap, index) {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Tap__["a" /* default */], { name: tap.name,
+        brewer: tap.brewer,
+        description: tap.description,
+        abv: tap.abv,
+        price: tap.price,
+        remaining: tap.remaining,
+        key: index });
+    })
+  );
+}
+var _default = TapList;
+/* harmony default export */ __webpack_exports__["a"] = (_default);
 ;
 
 var _temp = function () {
   if (typeof __REACT_HOT_LOADER__ === 'undefined') {
     return;
   }
+
+  __REACT_HOT_LOADER__.register(state, 'state', '/Users/brianpalowski/Desktop/Tap-Room/src/components/TapList.jsx');
+
+  __REACT_HOT_LOADER__.register(TapList, 'TapList', '/Users/brianpalowski/Desktop/Tap-Room/src/components/TapList.jsx');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/brianpalowski/Desktop/Tap-Room/src/components/TapList.jsx');
 }();
 
 ;
