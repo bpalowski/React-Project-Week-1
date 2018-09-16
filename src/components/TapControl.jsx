@@ -1,15 +1,39 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import NewTapp from './NewTapp';
+import PropTypes from 'prop-types';
+import TapOptions from './TapOptions';
 
-function TapControl(){
-  return (
-    <div>
-      <h2>Hello tap Info page</h2>
-      <h3>Would you like to see our <Link to="/tapList"> Tap List</Link>?</h3>
-      <h4>or</h4>
-      <h3>Would you like create a <Link to="/newTapp">New Tapp</Link> ?</h3>
-    </div>
-  );
+class TapControl extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      booleanView: false
+    };
+    this.changeOfViewConformation = this.changeOfViewConformation.bind(this);
+  }
+
+
+  changeOfViewConformation(){
+    this.setState({booleanView: true});
+  }
+
+  render(){
+    let viewDisplayCurrently = null;
+    if(this.state.booleanView){
+      viewDisplayCurrently = <NewTapp onNewTap={this.props.onNewTap}/>;
+    }else{
+      viewDisplayCurrently = <TapOptions onTapConfirmation={this.changeOfViewConformation}/>;
+    }
+    return (
+      <div>
+        {viewDisplayCurrently}
+      </div>
+    );
+  }
 }
+
+TapControl.propTypes = {
+  onNewTap: PropTypes.func
+};
 
 export default TapControl;

@@ -1,67 +1,68 @@
 import React from 'react';
+
 import Header from './Header';
 import { Switch, Route } from 'react-router-dom';
-import NewTapp from './NewTapp';
+
 import Error404 from './Error404';
 import TapControl from './TapControl';
 import TapList from './TapList';
-import Tap from './Tap';
-import Bar from '../img/bar1.jpg';
-import Background from './Background';
-
-var style ={
-backgroundImage: `url(${Bar})`,
-};
-
-function App(){
+import Home from './Home';
+import TapDetail from './TapDetail';
+// import Moment from 'moment';
 
 
-  return (
+class App extends React.Component{
 
-    <div>
+  constructor(props){
+    super(props);
+    this.state ={
+      tapList: []
+    };
+    this.handleNewTapToList = this.handleNewTapToList.bind(this);
+  }
+  // componentDidMount(){
+  //   this.waitTimeUpdate = setInterval(()=>
+  //     this.updateTapWaitTime(),
+  //   5000
+  //   );
+  // }
+  //
+  // componentWillUnmount(){
+  //   clearInterval(this.waitTimeUpdate);
+  // }
+  //
+  // updateTapWaitTime(){
+  //   let newTapList = this.state.tapList.slice();
+  //   newTapList.forEach((tap) =>
+  //     tap.formattedWaitTime =(tap.timeOpen).fromNow(true)
+  //   );
+  //   this.setState({tapList: newTapList});
+  // }
+  //
 
-      <style jsx>{`
-        div img{
-          height: 700px;
-          width: 100%;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center;
-        }
-        div{
-          text-align: center;
-        }
-         div h1{
-          font-family: 'Lobster', cursive;
+  handleNewTapToList(newTap){
+    var newTapList = this.state.tapList.slice();
 
-        }
-      `}</style>
+    newTapList.push(newTap);
+    this.setState({tapList: newTapList});
+  }
 
-      <Header/>
-      <Background/>
-      <Switch>
+  render(){
+    return (
+      <div>
 
-        <Route exact path='/#' component={App} />
-        <Route path='/tapControl' component={TapControl} />
-        <Route path='/error404' component={Error404} />
-        <Route path="/tapList" component={TapList}/>
-        <Route path="/newTapp" component={NewTapp}/>
-        <Route path="/tap" component={Tap}/>
+        <Header/>
+        <Switch>
+          <Route exact path='/' component ={Home} />
+          <Route path='/tapList' render={()=><TapList tapList={this.state.tapList} />} />
+          <Route path='/newTap' render={()=><TapControl onNewTap={this.handleNewTapToList} />} />
+          <Route exact path='/detail' component ={TapDetail} />
+          <Route component={Error404} />
+        </Switch>
+      </div>
 
-        <img style={style}/>
-
-      </Switch>
-
-
-
-
-    </div >
-
-
-
-
-
-  );
+    );
+  }
 }
 
 export default App;
